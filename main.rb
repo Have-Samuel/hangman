@@ -16,4 +16,18 @@ class Game
     @life = 8 # Number of lives
     load_or_new # Load the game state or start a new game
   end
+
+  # If new game, create secret word before play, else save game before play
+  def load_or_new
+    puts "Enter '1' for a new game or '2' to load the saved game."
+    input = gets.chomp
+    if input == '1'
+      @word.select_word # Select a new secret word
+      play_game
+    else
+      load_game
+      puts @display.load('')
+    end
+  end
+
 end
