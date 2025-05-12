@@ -70,7 +70,7 @@ class Game
     end
   end
 
-  # If wrong guess add to "misses" hstory
+  # If wrong guess add to "misses" history and this MISS method in the GAME class is paasing that value into that array in the player class
   def miss
     return false if @player.guess == 'save'
 
@@ -81,5 +81,16 @@ class Game
     puts @display.join(' ') # This will show the player the letters that they have guessed
     puts "\n" 
   end
+
+  # Check if there is a winner or loser. Or player has guessed secret word
+  def check_winner
+    if @display == @word.choice.split(//) # This checks if the display is equal to the secret word
+      puts "Congratulations! You win.\n" # This will show the player that they have won
+      @life = 0 # This will end the game
+    elsif @life.zero? # This checks if the player has no lives left
+      puts "Unlucky! The word was '#{@word.choice}'." # This will show the player that they have lost
+    end
+  end
+
 
 end
