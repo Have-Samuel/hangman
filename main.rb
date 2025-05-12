@@ -103,5 +103,23 @@ class Game
     end
   end
 
-  
+  def new_game
+    new = Game.new
+    new.play_game
+  end
+
+  def play_game
+    make_display
+    until @life.zero? 
+      puts "Life left:#{@life}" # Show how much life is left
+      @player.player_input # Ask for the player's input
+      save_game # Check if the player wants to save the game
+      match # Check if the player's guess is correct
+      check_winner # Check if the player has won or lost
+    end
+    replay
+  end
 end
+
+puts 'Welcome to terminal hangman. You get 8 attempts to guess the word. Good luck!'
+Game.new # This will create a new game
