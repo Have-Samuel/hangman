@@ -29,18 +29,27 @@ class Game
       puts @display.load('')
     end
   end
+
   # Make underscore based on the secret word length
   def make_display
-    if @display == ''
-      length = word.chooice.strip!.length
+    if @display == '' # This only runs if the display is empty, otherwise it will assume it's a loaded game
+      length = word.choice.strip!.length
       @display = Array.new(length, '-')
       puts "\nA secret word awaits. Godspeed.\n"
-      puts @display.join(' ')
+      puts @display.join(' ') # This turns the array into a string
       puts "\n"
     else
       false
     end
   end
 
-  
+  # Check if 'save' is entered and get desired file name
+  def save_game
+    if player.guess == 'save'
+      puts 'Enter a file name (no space).'
+      filename = gets.chomp
+      to_yaml(filename)
+    end
+  end
+
 end
