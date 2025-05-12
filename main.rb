@@ -52,4 +52,22 @@ class Game
     end
   end
 
+  # Check to see if player guess matches letter in secret word
+  def match
+    return false if @player.guess == 'save'
+
+    if @word.choice.include?(@player.guess)
+      word_array = @word.choice.split('')
+      word_array.each_with_index do |letter, index|
+        @display[index] = letter if letter == @player.guess # This will give you a prompt to show you whether the letter exist or not
+      end
+      puts "\nPhew, '#{@player.guess}' is in the word." # THen we get the display on the screen showing the letter within the word
+      puts "\n"
+      puts @display.join(' ')
+      puts "\n"
+    else
+      miss
+    end
+  end
+
 end
