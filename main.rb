@@ -29,5 +29,18 @@ class Game
       puts @display.load('')
     end
   end
+  # Make underscore based on the secret word length
+  def make_display
+    if @display == ''
+      length = word.chooice.strip!.length
+      @display = Array.new(length, '-')
+      puts "\nA secret word awaits. Godspeed.\n"
+      puts @display.join(' ')
+      puts "\n"
+    else
+      false
+    end
+  end
 
+  
 end
