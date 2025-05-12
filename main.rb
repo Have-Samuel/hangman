@@ -87,10 +87,21 @@ class Game
     if @display == @word.choice.split(//) # This checks if the display is equal to the secret word
       puts "Congratulations! You win.\n" # This will show the player that they have won
       @life = 0 # This will end the game
-    elsif @life.zero? # This checks if the player has no lives left
+    elsif @life.zero? # If the life is equal to zero then the game is over and the player has lost
       puts "Unlucky! The word was '#{@word.choice}'." # This will show the player that they have lost
     end
   end
 
+  # Allowing Game replay
+  def replay
+    puts "Enter 'y' to play again"
+    response = gets.chomp.downcase
+    if response == 'y'
+      new_game
+    else
+      puts 'Thanks for playing!'
+    end
+  end
 
+  
 end
