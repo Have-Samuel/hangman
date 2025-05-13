@@ -4,7 +4,7 @@ module Serialize
   # Otherwise, send player back to start
   def load_game
     if File.exist?('./saved_games') # If there is no saved games folder, create one or start a new game
-      puts "Saved files: #{Dir.children('./saved_games').join('')}"
+      puts "Saved files: #{Dir.children('./saved_games').join}"
       puts 'Enter one of the filenames "filename.yml"'
       filename = gets.chomp
       from_yaml(filename)
@@ -25,14 +25,14 @@ module Serialize
                 life: @life,
                 player_misses: @player.misses,
                 player_guess_history: @player.guess_history
-    }, f)
+              }, f)
     f.close
     puts "\nGAME SAVED"
   end
 
   # If we want to read the file, we use the following code
   def from_yaml(filename)
-    f = YAML.load(File.read("./saved_games/#{filename}"))
+    f = YAML.safe_load(File.read("./saved_games/#{filename}"))
     @word = f[:word]
     @display = f[:display]
     @life = f[:life]
