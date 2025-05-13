@@ -19,5 +19,24 @@ class Player
     end
   end
 
-  
+  # Default parameter value is blank incase check history finds the letter has been used
+  def validate_input(input = '')
+    until input.length == 1 &&  input =~ /[a-z]/
+      puts "\nEnter a valid guess (one letter a - z)."
+      input = gets.chomp.downcase
+    end
+    @guess = input # Set the guess to the input
+    check_history(input)
+    @guess_history << @guess
+  end
+
+  # If player has already entered a given lette, call validate_input with no argumnet to restart loop
+  def check_history(input)
+    if @guess_history.include?(input)
+      puts " You've already tried one"
+      validate_input
+    else
+      false
+    end
+  end
 end
