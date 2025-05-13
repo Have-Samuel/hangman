@@ -11,7 +11,7 @@ class SecretWord
     word_array = []
     word_list = File.open('./words.txt')
     word_list.each do |word|
-      word_array << word if word.length >= 5 && word <= 12
+      word_array << word if word.length >= 5 && word.length <= 12
     end
     @choice = word_array.sample
   end
