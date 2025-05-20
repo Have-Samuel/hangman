@@ -1,4 +1,3 @@
-# Methods to get filename, serialize to YAML, load game from YAML. All called by Game class
 module Serialize
   # Check if there is a saved games folder, if so, display file names, get name and pass to load_yaml
   # Otherwise, send player back to start
