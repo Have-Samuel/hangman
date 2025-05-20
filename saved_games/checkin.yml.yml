@@ -1,0 +1,31 @@
+---
+:word: !ruby/object:SecretWord
+  choice: samsung
+:display:
+- s
+- a
+- m
+- s
+- "-"
+- "n"
+- g
+:life: 3
+:player_misses:
+- p
+- d
+- i
+- t
+- v
+:player_guess_history:
+- p
+- a
+- d
+- g
+- i
+- "n"
+- m
+- t
+- v
+- v
+- v
+- s
