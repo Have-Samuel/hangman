@@ -1,0 +1,10 @@
+---
+:word: !ruby/object:SecretWord
+  choice: una
+:display:
+- "-"
+- "-"
+- "-"
+:life: 8
+:player_misses: []
+:player_guess_history: []
