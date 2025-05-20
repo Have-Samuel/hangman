@@ -19,7 +19,7 @@ class Player
     end
   end
 
-  # Default parameter value is blank incase check history finds the letter has been used
+  # Default parameter value is blank, incase check history finds the letter has been used
   def validate_input(input = '')
     until input.length == 1 && input =~ /[a-z]/
       puts "\nEnter a valid guess (one letter a - z)."
@@ -30,7 +30,7 @@ class Player
     @guess_history << @guess
   end
 
-  # If player has already entered a given lette, call validate_input with no argumnet to restart loop
+  # If player has already entered a given letter, call validate_input with no argument to restart loop
   def check_history(input)
     if @guess_history.include?(input)
       puts " You've already tried one"
