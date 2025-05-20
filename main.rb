@@ -79,7 +79,7 @@ class Game
     puts "Misses: #{player.misses.join(', ')}\n" # This will show the player the letters that they have guessed
     @life -= 1 # This will subtract one life from the player
     puts @display.join(' ') # This will show the player the letters that they have guessed
-    puts "\n" 
+    puts "\n"
   end
 
   # Check if there is a winner or loser. Or player has guessed secret word
@@ -110,7 +110,7 @@ class Game
 
   def play_game
     make_display
-    until @life.zero? 
+    until @life.zero?
       puts "Life left:#{@life}" # Show how much life is left
       @player.player_input # Ask for the player's input
       save_game # Check if the player wants to save the game
