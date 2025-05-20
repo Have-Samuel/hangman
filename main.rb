@@ -88,7 +88,7 @@ class Game
       puts "Congratulations! You win.\n" # This will show the player that they have won
       @life = 0 # This will end the game
     elsif @life.zero? # If the life is equal to zero then the game is over and the player has lost
-      puts "Unlucky! The word was '#{@word.choice}'." # This will show the word incase the player did guess the woord right
+      puts "Unlucky! The word was '#{@word.choice}'." # This will show the word incase the player did guess the word right
     end
   end
 
