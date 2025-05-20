@@ -1,0 +1,16 @@
+---
+:word: !ruby/object:SecretWord
+  choice: headlines
+:display:
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+:life: 8
+:player_misses: []
+:player_guess_history: []
