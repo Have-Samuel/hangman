@@ -30,7 +30,7 @@ class Game
     end
   end
 
-  # Make underscore based on the secret word length
+  # Making the underscore based on the secret word length
   def make_display
     if @display == '' # This only runs if the display is empty, otherwise it will assume it's a loaded game
       length = word.choice.strip!.length
