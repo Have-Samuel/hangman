@@ -45,11 +45,11 @@ class Game
 
   # Check if 'save' is entered and get desired file name
   def save_game
-    if player.guess == 'save'
-      puts 'Enter a file name (no space).'
-      filename = gets.chomp
-      to_yaml(filename)
-    end
+    return unless player.guess == 'save' # rThis will return nil incase the guess isn't 'save'
+
+    puts 'Enter a file name (no space).'
+    filename = gets.chomp
+    to_yaml(filename)
   end
 
   # Check to see if player guess matches letter in secret word
