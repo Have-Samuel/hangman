@@ -21,7 +21,7 @@ class Player
 
   # Default parameter value is blank incase check history finds the letter has been used
   def validate_input(input = '')
-    until input.length == 1 &&  input =~ /[a-z]/
+    until input.length == 1 && input =~ /[a-z]/
       puts "\nEnter a valid guess (one letter a - z)."
       input = gets.chomp.downcase
     end
