@@ -57,7 +57,7 @@ class Game
     return false if @player.guess == 'save'
 
     if @word.choice.include?(@player.guess)
-      word_array = @word.choice.split('')
+      word_array = @word.choice.split('') # We can also use chars for the underlined code.
       word_array.each_with_index do |letter, index|
         @display[index] = letter if letter == @player.guess # This will give you a prompt to show you whether the letter exist or not
       end
