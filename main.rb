@@ -75,7 +75,7 @@ class Game
     return false if @player.guess == 'save'
 
     player.misses << @player.guess
-    puts "\n '#{@player.guess}' is not the word.\n" # This will show the player that the letter is not in the word
+    puts "\n '#{@player.guess}' is not in the word.\n" # This will show the player that the letter is not in the word
     puts "Misses: #{player.misses.join(', ')}\n" # This will show the player the letters that they have guessed
     @life -= 1 # This will subtract one life from the player
     puts @display.join(' ') # This will show the player the letters that they have guessed
