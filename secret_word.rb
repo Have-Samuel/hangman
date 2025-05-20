@@ -1,5 +1,5 @@
 # Class to create and store secret word
-#
+
 class SecretWord
   attr_accessor :choice
 
