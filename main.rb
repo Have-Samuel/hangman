@@ -76,7 +76,7 @@ class Game
 
     player.misses << @player.guess
     puts "\n '#{@player.guess}' is not in the word.\n" # This will show the player that the letter is not in the word
-    puts "Misses: #{player.misses.join(', ')}\n" # This will show the player the letters that they have guessed
+    puts "Misses: #{player.misses.join(', ')}\n" # This will show the player the letters that they have guessed and not in the word
     @life -= 1 # This will subtract one life from the player
     puts @display.join(' ') # This will show the player the letters that they have guessed
     puts "\n"
@@ -84,11 +84,11 @@ class Game
 
   # Check if there is a winner or loser. Or player has guessed secret word
   def check_winner
-    if @display == @word.choice.split(//) # This checks if the display is equal to the secret word
+    if @display == @word.choice.split('') # This checks if the display is equal to the secret word
       puts "Congratulations! You win.\n" # This will show the player that they have won
       @life = 0 # This will end the game
     elsif @life.zero? # If the life is equal to zero then the game is over and the player has lost
-      puts "Unlucky! The word was '#{@word.choice}'." # This will show the player that they have lost
+      puts "Unlucky! The word was '#{@word.choice}'." # This will show the word incase the player did guess the woord right
     end
   end
 
