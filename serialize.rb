@@ -3,7 +3,7 @@ module Serialize
   # Otherwise, send player back to start
   def load_game
     if File.exist?('./saved_games') # If there is no saved games folder, create one or start a new game
-      puts "Saved files: #{Dir.children('./saved_games').join}"
+      puts "Saved files: #{Dir.children('./saved_games')}"
       puts 'Enter one of the filenames "filename.yml"'
       filename = gets.chomp
       from_yaml(filename)
