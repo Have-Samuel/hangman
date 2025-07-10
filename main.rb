@@ -3,7 +3,7 @@ require './player'
 require './secret_word'
 require './serialize'
 
-# Class to instantiate Player and SecretWord objects, and methods provide the game logic
+# Class to instantiate Player and SecretWord objects, and methods to provide the game logic
 class Game
   # Uses the Serialize module as well
   include Serialize
